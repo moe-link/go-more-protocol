@@ -7,11 +7,10 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "git",
-	Short: "Git is a distributed version control system.",
-	Long: `Git is a free and open source distributed version control system
-designed to handle everything from small to very large projects 
-with speed and efficiency.`,
+	Use:   "MoeLink",
+	Short: "MoeLink is a multi-protocol service.",
+	Long: `MoeLink is a multi-protocol service that supports common video streaming protocols, 
+			communication protocols, and IoT protocols, among others.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("run moe-link...")
 	},
