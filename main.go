@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"go-more-protocol/cmd"
 	"go-more-protocol/config"
 	"go-more-protocol/proto/ws"
 	"os"
@@ -17,6 +18,7 @@ func init() {
 func main() {
 	c := make(chan os.Signal)
 	signal.Notify(c)
+	cmd.Execute()
 	go func() {
 		fmt.Println("Go routine running")
 		time.Sleep(3 * time.Second)

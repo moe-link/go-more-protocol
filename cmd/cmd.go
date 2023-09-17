@@ -1,9 +1,9 @@
 package cmd
 
 import (
-	"errors"
 	"fmt"
 	"github.com/spf13/cobra"
+	"os"
 )
 
 var rootCmd = &cobra.Command{
@@ -13,10 +13,16 @@ var rootCmd = &cobra.Command{
 designed to handle everything from small to very large projects 
 with speed and efficiency.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		Error(cmd, args, errors.New("unrecognized command"))
+		fmt.Println("run moe-link...")
 	},
+	//Run: func(cmd *cobra.Command, args []string) {
+	//	Error(cmd, args, errors.New("unrecognized command"))
+	//},
 }
 
-func Error(cmd *cobra.Command, args []string, err error) {
-	fmt.Println(cmd, args, err)
+func Execute() {
+	if err := rootCmd.Execute(); err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
 }
