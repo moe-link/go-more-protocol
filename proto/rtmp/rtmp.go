@@ -1,1 +1,5 @@
 package rtmp
+
+func InitRTMP() {
+
+}
